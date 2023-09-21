@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioHacks</title>
+    <link rel="icon" href="hm.ico" type="image/x-icon">
+    <style>
+        body {
+            background-image: url('BG.gif'); /* Set your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .game-over {
+            background-color: rgba(224, 224, 224, 0.8);
+            padding: 10px;
+            margin-top: 390px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .score {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .player-name {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-over">
+        <h1></h1>
+        <p class="player-name"> <span id="playerName"></span></p>
+        <p class="score"><span id="playerScore"></span></p>
+    </div>
+    <script>
+        // Retrieve player name and score from localStorage
+        const playerName = localStorage.getItem("playerName");
+        const playerScore = localStorage.getItem("playerScore");
+
+        // Display player name and score
+        document.getElementById("playerName").textContent = "Player Name: " + playerName;
+        document.getElementById("playerScore").textContent = "Score: " + playerScore;
+    </script>
+</body>
+</html>
